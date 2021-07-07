@@ -8,6 +8,19 @@ import React, { Component } from "react"; //imrc
 //     }
 // }
 class Counter extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    // new state or new props or make AJAX requests
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // AJAX call and get new data from the server
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("Counter Unmount");
+  }
+
   // state = {
   //   // count: 0,
   //   count: this.props.counter.value,
@@ -28,6 +41,7 @@ class Counter extends Component {
   // }
 
   render() {
+    console.log("Counters - rendered");
     // console.log("props", this.props);
     // Every react component has a property called props, which is a plain js object. It includes all attributes we set for components. Example: In our case, for Counters, value and selected are attributes for props object, key won't be as it's special unique identifier.
 
